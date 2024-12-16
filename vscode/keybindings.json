@@ -1,3 +1,4 @@
+// Place your key bindings in this file to override the defaultsauto[]
 [
     {
         "key": "shift+up",
@@ -60,5 +61,17 @@
     {
         "key": "ctrl+alt+[Period]",
         "command": "fzf-quick-open.runFzfSearchProjectRoot"
+    },
+    {
+        "key": "ctrl+alt+t",
+        "command": "glassit.increase"
+    },
+    {
+        "key": "ctrl+alt+z",
+        "command": "-glassit.increase"
+    },
+    {
+        "key": "ctrl+b s",
+        "command": "workbench.action.toggleStatusbarVisibility"
     }
 ]
