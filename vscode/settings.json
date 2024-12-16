@@ -37,7 +37,7 @@
         {
             "before": [
                 "<leader>",
-                "s"
+                "w"
             ],
             "commands": [
                 "workbench.action.files.save"
@@ -82,6 +82,15 @@
         {
             "before": [
                 "<leader>",
+                "v"
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
                 "r"
             ],
             "commands": [
@@ -101,17 +110,6 @@
         {
             "before": [
                 "<leader>",
-                "s",
-                "w"
-            ],
-            "commands": [
-                "workbench.action.findInFiles"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "s",
                 "f"
             ],
             "commands": [
@@ -121,7 +119,7 @@
         {
             "before": [
                 "<leader>",
-                ",",
+                ","
             ],
             "commands": [
                 "workbench.action.navigateBack"
@@ -130,7 +128,7 @@
         {
             "before": [
                 "<leader>",
-                ".",
+                "."
             ],
             "commands": [
                 "workbench.action.navigateForward"
@@ -143,27 +141,6 @@
             ],
             "commands": [
                 "workbench.action.terminal.toggleTerminal"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "s",
-                "d"
-            ],
-            "commands": [
-                "workbench.action.debug.start"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "s",
-                "d",
-                "s"
-            ],
-            "commands": [
-                "workbench.action.debug.stop"
             ]
         },
         {
