@@ -23,6 +23,7 @@
     "cmake.showOptionsMovedNotification": false,
     "workbench.colorTheme": "Noctis Obscuro",
     "json.schemas": [],
+    "debug.openDebug": "neverOpen",
 
     "vim.normalModeKeyBindingsNonRecursive": [
         {
@@ -171,11 +172,20 @@
             "commands": [
                 "workbench.debug.viewlet.action.removeAllBreakpoints"
             ]
-        }
+        },
+        {
+            "before": [
+                "<leader>",
+                "i"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
     ],
     "vim.leader": " ",
     "glassit.alpha": 240,
     "workbench.editor.editorActionsLocation": "hidden",
-    "workbench.statusBar.visible": false,
-    "workbench.editor.showTabs": "none"
+    "workbench.editor.showTabs": "none",
+    "workbench.statusBar.visible": false
 }

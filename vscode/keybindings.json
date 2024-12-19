@@ -73,5 +73,15 @@
     {
         "key": "ctrl+b s",
         "command": "workbench.action.toggleStatusbarVisibility"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
     }
 ]
