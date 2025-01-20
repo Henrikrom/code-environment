@@ -15,13 +15,13 @@
         "editor.cursorSurroundingLines"
     ],
     "vim.smartRelativeLine": true,
-    "editor.cursorSmoothCaretAnimation": "on",
+    // "editor.cursorSmoothCaretAnimation": "on",
     "workbench.activityBar.location": "top",
     "workbench.editor.pinnedTabSizing": "compact",
     "window.density.editorTabHeight": "compact",
-    "editor.cursorSurroundingLines": 150,
+    // "editor.cursorSurroundingLines": 150,
     "cmake.showOptionsMovedNotification": false,
-    "workbench.colorTheme": "Noctis Obscuro",
+    "workbench.colorTheme": "Visual Studio Dark - C++",
     "json.schemas": [],
     "debug.openDebug": "neverOpen",
 
@@ -182,10 +182,20 @@
                 "editor.action.showHover"
             ]
         },
+        {
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.files.saveAll"
+            ]
+        },
     ],
     "vim.leader": " ",
-    "glassit.alpha": 240,
+    "glassit.alpha": 230,
     "workbench.editor.editorActionsLocation": "hidden",
     "workbench.editor.showTabs": "none",
+    "database-client.autoSync": true,
     "workbench.statusBar.visible": false
 }
