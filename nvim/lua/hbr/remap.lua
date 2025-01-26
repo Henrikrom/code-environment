@@ -1,4 +1,38 @@
 vim.g.mapleader = " "
+
+vim.keymap.set("n", "<leader>w", function()
+    vim.cmd("wa")
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>,", "<C-o>")
+vim.keymap.set("n", "<leader>.", "<C-i>")
+
+vim.keymap.set("n", "<C-\\>", ":vsplit<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>v", ":split<CR>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>t", function()
+    vim.cmd("split")
+    vim.cmd("wincmd j")
+    vim.cmd("terminal")
+    vim.cmd("resize " .. math.floor(vim.o.lines * 0.2))
+end, { noremap = true, silent = true})
+
+vim.keymap.set("t", "<leader><Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
+
+vim.keymap.set("n", "<C-n>", ":resize +2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-m", ":resize -2<CR>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>f", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
+
+
+vim.keymap.set("n", "<leader>h", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>j", "<C-w>j", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>k", "<C-w>k", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>l", "<C-w>l", { noremap = true, silent = true })
+
+vim.keymap.set('n', '<leader>q', ':q<CR>', { noremap = true, silent = true })
+
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
