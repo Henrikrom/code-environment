@@ -7,7 +7,7 @@ return {
     require("nvim-tree").setup({
       -- Nvim-Tree options
       view = {
-        width = 30, -- Width of the Nvim-Tree window
+        width = 50, -- Width of the Nvim-Tree window
         side = "left", -- Side of the screen to display Nvim-Tree
         relativenumber = true, -- Use relative line numbers in Nvim-Tree
       },

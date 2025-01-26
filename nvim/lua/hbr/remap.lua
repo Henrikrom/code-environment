@@ -20,7 +20,7 @@ end, { noremap = true, silent = true})
 vim.keymap.set("t", "<leader><Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
 
 vim.keymap.set("n", "<C-n>", ":resize +2<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-m", ":resize -2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-m>", ":resize -2<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>f", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
