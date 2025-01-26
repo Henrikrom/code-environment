@@ -1,2 +1,2 @@
 require("hbr.remap")
-print("testing hbr")
+require("hbr.set")

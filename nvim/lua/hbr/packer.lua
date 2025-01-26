@@ -14,7 +14,22 @@ return require('packer').startup(function(use)
   }
 
   use({ 'rose-pine/neovim', as = 'rose-pine' })
-  vim.cmd('coolorscheme rose-pine')
+  vim.cmd('colorscheme rose-pine')
+
+local lsp = require('lsp-zero')
+
+lsp.preset('recommended')
+lsp.setup()
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use('ThePrimeagen/harpoon')
+  use('mbbill/undotree')
+  use('tpope/vim-fugitive')
+
+  -- LSP
+  use({'neovim/nvim-lspconfig'})
+  use({'hrsh7th/nvim-cmp'})
+  use({'hrsh7th/cmp-nvim-lsp'})
 
 end)
+
 
