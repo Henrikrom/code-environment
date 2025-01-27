@@ -11,6 +11,13 @@ return {
         side = "left", -- Side of the screen to display Nvim-Tree
         relativenumber = true, -- Use relative line numbers in Nvim-Tree
       },
+
+      actions = {
+          open_file = {
+              quit_on_open = true, -- Closes nvim-tree when opening a file
+          },
+      },
+
       --renderer = {
       --  highlight_git = true, -- Highlight git changes in the tree
       --  icons = {
