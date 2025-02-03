@@ -4,7 +4,13 @@ return {
         'neovim/nvim-lspconfig', -- Core LSP support
         dependencies = {
             'williamboman/mason.nvim',          -- For LSP management
-            'williamboman/mason-lspconfig.nvim' -- Bridges Mason and nvim-lspconfig
+            'williamboman/mason-lspconfig.nvim', -- Bridges Mason and nvim-lspconfig
+            'hrsh7th/nvim-cmp',        -- The completion plugin
+            'hrsh7th/cmp-nvim-lsp',    -- LSP source
+            'hrsh7th/cmp-buffer',      -- Buffer source
+            'hrsh7th/cmp-path',        -- Path source
+            'hrsh7th/cmp-cmdline',     -- Cmdline source
+            'saadparwaiz1/cmp_luasnip' -- Luasnip source
         },
         config = function()
             require('mason').setup()
@@ -35,6 +41,14 @@ return {
                 on_attach = on_attach
             })
 
+            require('lspconfig').pyright.setup({
+                on_attach = on_attach
+            })
+
+            require('lspconfig').ts_ls.setup({
+                on_attach = on_attach
+            })
+
             require('roslyn').setup {
                 args = {
                     '--logLevel=Information',
@@ -61,7 +75,54 @@ return {
                     --[[ the rest of your roslyn config ]]
                     handlers = require 'rzls.roslyn_handlers',
                 },
+                on_attach = on_attach
             }
+
+            local cmp = require('cmp')
+
+            cmp.setup({
+                -- Key mappings for navigation and completion
+                mapping = cmp.mapping.preset.insert({
+                    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                    ['<C-Space>'] = cmp.mapping.complete(),
+                    ['<C-e>'] = cmp.mapping.close(),
+                    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                }),
+
+                -- Completion sources
+                sources = {
+                    { name = 'nvim_lsp' },
+                    { name = 'buffer' },
+                    { name = 'path' },
+                    { name = 'cmdline' },
+                    { name = 'luasnip' },
+                },
+
+                -- Snippet expansion (you need a snippet engine, e.g., luasnip)
+                snippet = {
+                    expand = function(args)
+                        require('luasnip').lsp_expand(args.body)
+                    end,
+                },
+
+                -- Formatting the completion items (optional)
+                formatting = {
+                    fields = { 'kind', 'abbr', 'menu' },
+                    format = function(entry, vim_item)
+                        vim_item.kind = string.format('%s', vim_item.kind)
+                        vim_item.menu = ({
+                            nvim_lsp = '[LSP]',
+                            buffer = '[Buffer]',
+                            path = '[Path]',
+                            cmdline = '[Cmd]',
+                            luasnip = '[Snippet]',
+                        })[entry.source.name]
+                        return vim_item
+                    end,
+                },
+            })
+
         end,
     },
 }

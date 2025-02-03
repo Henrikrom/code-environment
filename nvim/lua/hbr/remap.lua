@@ -17,14 +17,17 @@ vim.keymap.set("n", "<leader>t", function()
     vim.cmd("resize " .. math.floor(vim.o.lines * 0.2))
 end, { noremap = true, silent = true})
 
-vim.keymap.set("t", "<leader><Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
+vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
 
---vim.keymap.set("n", "<C-n>", ":resize +2<CR>", { noremap = true, silent = true })
---vim.keymap.set("n", "<C-m>", ":resize -2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>f", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('n', '<leader>cd', ':cd %:p:h<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>h", "<C-w>h", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>j", "<C-w>j", { noremap = true, silent = true })
